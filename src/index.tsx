@@ -8,7 +8,7 @@ import { createStore } from "redux";
 import { enthusiasm } from "./reducers/index";
 import { StoreState } from "./types/index";
 
-const store = createStore<StoreState>(enthusiasm, {
+const store = createStore<StoreState, any, any, any>(enthusiasm, {
   enthusiasmLevel: 1,
   languageName: "TypeScript"
 });
@@ -17,7 +17,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Hello />
   </Provider>,
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 
 // If you want your app to work offline and load faster, you can change
